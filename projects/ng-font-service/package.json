@@ -1,0 +1,29 @@
+{
+  "name": "@devbandras/ng-font-service",
+  "version": "1.0.0",
+  "description": "Angular font service - UI and monospace font selector with localStorage persistence",
+  "keywords": [
+    "angular",
+    "font",
+    "font-service",
+    "typography",
+    "css-variables"
+  ],
+  "author": "devbandras",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/devbandras/ng-font-service.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "peerDependencies": {
+    "@angular/common": "^17.0.0 || ^18.0.0 || ^19.0.0",
+    "@angular/core": "^17.0.0 || ^18.0.0 || ^19.0.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false
+}
