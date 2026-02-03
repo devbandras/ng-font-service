@@ -22,10 +22,55 @@ Create or update `.npmrc` in your project root:
 //npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}
 ```
 
-### 2. Install the package
+### 2. GitHub Token beállítása
+
+A GitHub Packages-hez authentikáció szükséges, még publikus package-eknél is.
+
+#### Personal Access Token létrehozása
+
+1. Menj ide: https://github.com/settings/tokens
+2. Kattints "Generate new token" → "Generate new token (classic)"
+3. Add meg a nevet (pl. "npm packages")
+4. Pipáld be: `read:packages`
+5. Kattints "Generate token"
+6. **Másold ki a tokent** (csak egyszer látod!)
+
+#### Token beállítása
+
+**A) Környezeti változóként (ajánlott):**
+
+Windows PowerShell:
+```powershell
+$env:GITHUB_TOKEN = "ghp_xxxxxxxxxxxx"
+```
+
+Windows permanens (Rendszer → Környezeti változók):
+- Változó neve: `GITHUB_TOKEN`
+- Változó értéke: `ghp_xxxxxxxxxxxx`
+
+Linux/Mac:
+```bash
+export GITHUB_TOKEN=ghp_xxxxxxxxxxxx
+```
+
+**B) Közvetlenül a .npmrc fájlban (ne commitold!):**
+```
+@devbandras:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=ghp_xxxxxxxxxxxx
+```
+
+### 3. Install the package
 
 ```bash
 npm install @devbandras/ng-font-service
+```
+
+### Alternatív telepítés (token nélkül)
+
+Ha nem szeretnél GitHub tokent használni, publikus repo esetén:
+
+```bash
+npm install github:devbandras/ng-font-service#v1.0.0
 ```
 
 ## Usage
